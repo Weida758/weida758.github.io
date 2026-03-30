@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weida Chen — Gameplay Programmer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf9;
+    --bg-alt: #f3f2f0;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-secondary: #555;
+    --text-tertiary: #888;
+    --border: #e0ddd8;
+    --accent: #1a1a1a;
+    --link: #2a5a3a;
+    --mono: 'IBM Plex Mono', monospace;
+    --serif: 'Source Serif 4', serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0; z-index: 100;
+    background: rgba(250,250,249,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+
+  .nav-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+  }
+
+  .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+
+  .nav-links a {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+  }
+  .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+  .nav-toggle {
+    display: none; background: none; border: none; cursor: pointer;
+    flex-direction: column; gap: 4px;
+  }
+  .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--text); }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 4rem;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 540px;
+    margin-bottom: 1.75rem;
+    font-weight: 300;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-links a {
+    color: var(--text-secondary);
+    display: flex; align-items: center; gap: 4px;
+  }
+
+  .hero-links span {
+    color: var(--text-secondary);
+  }
+
+  .divider {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .divider hr {
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── SECTION ── */
+  section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem;
+  }
+
+  .section-title {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 2rem;
+  }
+
+  /* ── PROJECTS ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .project {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    overflow: hidden;
+  }
+
+  .project-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-image img { width: 100%; height: 100%; object-fit: cover; }
+
+  .project-image-placeholder {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    letter-spacing: 0.05em;
+  }
+
+  .project-info {
+    padding: 1.5rem;
+  }
+
+  .project-info h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .project-meta {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-tech span {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    letter-spacing: 0.03em;
+  }
+
+  .project-actions {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.82rem;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .skill-category h3 {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-category ul { list-style: none; }
+
+  .skill-category li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    padding: 0.3rem 0;
+    font-weight: 300;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-item {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+    margin-bottom: 2.25rem;
+    padding-bottom: 2.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .exp-date {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    padding-top: 3px;
+  }
+
+  .exp-content h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+
+  .exp-company {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.6rem;
+  }
+
+  .exp-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    max-width: 520px;
+  }
+
+  /* ── ABOUT ── */
+  .about-content { max-width: 600px; }
+
+  .about-content p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
+  /* ── CONTACT ── */
+  .contact-content p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 480px;
+    font-weight: 300;
+  }
+
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.88rem;
+  }
+
+  .contact-label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--text-tertiary);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    min-width: 70px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  footer p {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--text-tertiary);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+    nav.open .nav-links {
+      display: flex; flex-direction: column;
+      position: absolute;
+      top: 52px; left: 0; right: 0;
+      background: rgba(250,250,249,0.97);
+      backdrop-filter: blur(12px);
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      gap: 0.75rem;
+    }
+    .hero h1 { font-size: 1.8rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
+  }
+
+  @media (max-width: 480px) {
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-name">Weida Chen</a>
+    <button class="nav-toggle" onclick="this.closest('nav').classList.toggle('open')" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>Weida Chen</h1>
+  <p class="hero-subtitle">Description placeholder</p>
+  <div class="hero-links">
+    <span>weidac490@email.com</span>
+    <a href="https://github.com/Weida758">GitHub</a>
+    <a href="https://www.linkedin.com/in/weida-chen-800457347/">LinkedIn</a>
+  </div>
+</header>
+
+<div class="divider"><hr></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-title">Selected Work</div>
+
+  <div class="projects-grid">
+
+    <div class="project">
+      <div class="project-image">
+        <img src="samurai_cat.png" alt="Project screenshot">
+      </div>
+      <div class="project-info">
+        <h3>Samurai Cat</h3>
+        <div class="project-meta">
+          <span>Unity</span>
+          <span>&#183;</span>
+          <span>School Project - 2 months</span>
+        </div>
+        <p class="project-desc">A 2D platformer that focuses on the pogo mechanic to navigate through levels. Keeps track of gamestates for ability unlocks and checkpoints for player respawning</p>
+        <div class="project-tech">
+          <span>C#</span>
+          <span>Level Design</span>
+          <span>Character Controller</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/mAntonioCamacho/Samurai-Cat">Source Code &#8594;</a>
+          <a href="https://weida345.itch.io/samurai-cat">Play on Itch&#8594;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-image">
+        <img src="question_of_the_day.png" alt="Project screenshot">
+      </div>
+      <div class="project-info">
+        <h3>Question of the Day</h3>
+        <div class="project-meta">
+          <span>Unity</span>
+          <span>&#183;</span>
+          <span>Group Project - 2 month</span>
+        </div>
+        <p class="project-desc">A 3D puzzle horror game set in a university classroom where the student has to correctly solve multiple problems to escape.</p>
+        <div class="project-tech">
+          <span>C#</span>
+          <span>First Person Interaction System</span>
+          <span>Programming Puzzles</span>
+          <span>Level Design</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/TeahBrumbaugh/Horror-Game-Project">Source Code &#8594;</a>
+          <a href="https://teahb.itch.io/question-of-the-day">Play on Itch &#8594;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-image">
+        <img src="A_Little_Adventurer.png" alt="Project screenshot">
+        <!-- <span class="project-image-placeholder">screenshot</span> -->
+      </div>
+      <div class="project-info">
+        <h3>A Little Adventurer</h3>
+        <div class="project-meta">
+          <span>Unity</span>
+          <span>&#183;</span>
+          <span>School project</span>
+        </div>
+        <p class="project-desc">A 3D RPG game following a little adventurer taking quests from villagers and completing them for reward. I implemented an
+            inventory system for the player to hold items, a quest system to keep track of accepted & completed quests, and a dialogue system to interact with NPCs.
+        </p>
+        <div class="project-tech">
+          <span>C#</span>
+          <span>Combat System</span>
+          <span>Physics</span>
+          <span>State Machines</span>
+          <span>Animation</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/Weida758/GDIM32-Final">Source Code &#8594;</a>
+          <a href="https://weida-chen.itch.io/gdim32final">Play on Itch&#8594;</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-title">Skills</div>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <h3>Languages</h3>
+      <ul>
+        <li>C++</li>
+        <li>C#</li>
+        <li>HLSL / GLSL</li>
+        <li>Python</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>Engines & Tools</h3>
+      <ul>
+        <li>Unity</li>
+        <li>Git / Perforce</li>
+        <li>Visual Studio / Rider</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>Systems</h3>
+      <ul>
+        <li>Character Controllers</li>
+        <li>Combat & Ability Systems</li>
+        <li>AI & Behavior Trees</li>
+        <li>Physics & Collision</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="divider"><hr></div>
+
+<!-- Education -->
+<section id="education">
+  <div class="section-title">Education</div>
+
+  <div class="exp-item">
+    <div class="exp-date">2024 — Present</div>
+    <div class="exp-content">
+      <h3>University of California, Irvine</h3>
+      <p class="exp-desc">Majoring in Computer Science</p>
+      <p class="exp-desc">Majoring in Gamedesign and Interactive Media</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-title">Experience</div>
+
+  <div class="exp-item">
+    <div class="exp-date">2024 — Present</div>
+    <div class="exp-content">
+      <h3>Gameplay Programmer</h3>
+      <div class="exp-company">Place holder company - location</div>
+      <p class="exp-desc">description</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">About</div>
+  <div class="about-content">
+    <p>I'm a game programmer. I got into games because I grew up playing them and always wanted to understand how they worked under the hood. 
+        I like solving problems where code directly shapes how a game feels such as things like movement, combat, and AI. I care about clean systems that work well and make sense to the player.</p>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-title">Contact</div>
+  <div class="contact-content">
+    <p></p>
+    <ul class="contact-list">
+      <li><span class="contact-label">Email</span> weidac490@gmail.com</li>
+      <li><span class="contact-label">GitHub</span> <a href="https://github.com/Weida758">Github</a></li>
+      <li><span class="contact-label">LinkedIn</span> <a href="https://www.linkedin.com/in/weida-chen-800457347/">LinkedIn</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Weida Chen</p>
+</footer>
+
+</body>
+</html>

@@ -3,20 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weida Chen — Gameplay Programmer</title>
+<title>Weida Chen - Game Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #fafaf9;
-    --bg-alt: #f3f2f0;
+    --bg: #f6f8fb;
+    --bg-alt: #eef2f5;
     --surface: #ffffff;
-    --text: #1a1a1a;
-    --text-secondary: #555;
-    --text-tertiary: #888;
-    --border: #e0ddd8;
-    --accent: #1a1a1a;
-    --link: #2a5a3a;
+    --surface-strong: #fbfcfe;
+    --text: #15181d;
+    --text-secondary: #4b5563;
+    --text-tertiary: #7a8696;
+    --border: #dce3ea;
+    --accent: #1f6f78;
+    --accent-soft: #dceff1;
+    --link: #17636c;
     --mono: 'IBM Plex Mono', monospace;
     --serif: 'Source Serif 4', serif;
     --sans: 'DM Sans', sans-serif;
@@ -27,7 +29,9 @@
 
   body {
     font-family: var(--sans);
-    background: var(--bg);
+    background:
+      linear-gradient(180deg, #ffffff 0%, var(--bg) 340px),
+      var(--bg);
     color: var(--text);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -40,7 +44,7 @@
   nav {
     position: sticky;
     top: 0; z-index: 100;
-    background: rgba(250,250,249,0.92);
+    background: rgba(246,248,251,0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
@@ -59,7 +63,7 @@
     font-family: var(--serif);
     font-weight: 700;
     font-size: 1rem;
-    color: var(--text);
+    color: var(--accent);
   }
 
   .nav-links { display: flex; gap: 1.75rem; list-style: none; }
@@ -113,6 +117,8 @@
     display: flex; align-items: center; gap: 4px;
   }
 
+  .hero-links a:hover { color: var(--accent); }
+
   .hero-links span {
     color: var(--text-secondary);
   }
@@ -156,12 +162,22 @@
     border: 1px solid var(--border);
     background: var(--surface);
     overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 28px rgba(26, 31, 38, 0.05);
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  }
+
+  .project:hover {
+    transform: translateY(-3px);
+    border-color: #b8cad3;
+    box-shadow: 0 18px 38px rgba(26, 31, 38, 0.09);
   }
 
   .project-image {
     width: 100%;
     aspect-ratio: 16/9;
-    background: var(--bg-alt);
+    background:
+      linear-gradient(135deg, #e8eef3 0%, #f7f9fb 55%, #e4f0ec 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,6 +192,7 @@
     font-size: 0.7rem;
     color: var(--text-tertiary);
     letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
   .project-info {
@@ -226,6 +243,29 @@
     display: flex;
     gap: 1.25rem;
     font-size: 0.82rem;
+  }
+
+  .project-actions a { font-weight: 500; }
+
+  .study-panel {
+    background: var(--surface-strong);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 28px rgba(26, 31, 38, 0.05);
+  }
+
+  .study-panel h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .study-panel p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    max-width: 680px;
   }
 
   /* ── SKILLS ── */
@@ -359,7 +399,7 @@
       display: flex; flex-direction: column;
       position: absolute;
       top: 52px; left: 0; right: 0;
-      background: rgba(250,250,249,0.97);
+      background: rgba(246,248,251,0.97);
       backdrop-filter: blur(12px);
       padding: 1rem 1.5rem;
       border-bottom: 1px solid var(--border);
@@ -386,10 +426,10 @@
     </button>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#other">Other</a></li>
+      <li><a href="#other">Unfinished</a></li>
+      <li><a href="#studying">Studying</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Experience</a></li>
       <!-- <li><a href="#about">About</a></li> -->
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -399,10 +439,10 @@
 <!-- HERO -->
 <header class="hero">
   <h1>Weida Chen</h1>
-  <p class="hero-subtitle">I'm a game programmer. I got into games because I grew up playing them and always wanted to understand how they worked under the hood. 
-        I like solving problems and designing systems with code such as movement system, combat system, quest system, etc.</p>
+  <p class="hero-subtitle">Game Engineer</p>
   <div class="hero-links">
     <span>weidac490@email.com</span>
+    <a href="Weida_Chen_Resume.pdf">Resume</a>
     <a href="https://github.com/Weida758">GitHub</a>
     <a href="https://www.linkedin.com/in/weida-chen-800457347/">LinkedIn</a>
   </div>
@@ -418,6 +458,58 @@
 
     <div class="project">
       <div class="project-image">
+        <img src="GetMeOut.png" alt="Get Me Out gameplay screenshot">
+      </div>
+      <div class="project-info">
+        <h3>Get Me Out</h3>
+        <div class="project-meta">
+          <span>Unity</span>
+          <span>&#183;</span>
+          <span>UCI 2026 Zotjam</span>
+        </div>
+        <p class="project-desc">Award-winning 2D Unity jam game that won 4th in Audience Choice and 2nd in Judge Choice at UCI 2026 Zotjam. I built the core card-driven movement architecture, connecting a player state machine, input actions, and ability execution so each card changes the character's behavior through reusable systems instead of one-off level scripting.</p>
+        <div class="project-tech">
+          <span>C#</span>
+          <span>Card & Deck System</span>
+          <span>State Machines</span>
+          <span>Input Architecture</span>
+          <span>Ability Systems</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/Weida758/Get-Me-Out">Source Code &#8594;</a>
+          <a href="https://weida345.itch.io/get-me-out">Play on Itch &#8594;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-image">
+        <span class="project-image-placeholder">screenshot</span>
+      </div>
+      <div class="project-info">
+        <h3>Knight-mare Survival</h3>
+        <div class="project-meta">
+          <span>Unity</span>
+          <span>&#183;</span>
+          <span>School Project - Vertical Slice</span>
+        </div>
+        <p class="project-desc">Vampire Survivors-like 2D school project built around scalable combat systems. I engineered weighted enemy wave spawning with time-based difficulty curves, pooled runtime objects for enemies, XP pickups, and VFX, and a modular weapon/upgrade pipeline driven by ScriptableObject data so new weapons, enemy types, and progression options can be added without rewriting core logic.</p>
+        <div class="project-tech">
+          <span>C#</span>
+          <span>Enemy Spawning</span>
+          <span>Object Pooling</span>
+          <span>Weapon Systems</span>
+          <span>ScriptableObjects</span>
+          <span>Event-Driven UI</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/Weida758/GDIM33_VerticalSlice/tree/main/Knight-mare%20Survival/Assets/Scripts">Source Code &#8594;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-image">
         <img src="samurai_cat.png" alt="Project screenshot">
       </div>
       <div class="project-info">
@@ -427,11 +519,13 @@
           <span>&#183;</span>
           <span>School Project - 2 months</span>
         </div>
-        <p class="project-desc">A 2D platformer that focuses on the pogo mechanic to navigate through levels. Keeps track of gamestates for ability unlocks and checkpoints for player respawning</p>
+        <p class="project-desc">My first Unity project: a 2D platformer built around pogo-style downward attacks. I worked on Rigidbody2D movement, sprinting, jumping, double-jump and dash unlocks, one-way platform drop-through, checkpoint respawning, projectile hazards, and scene-to-scene spawn persistence.</p>
         <div class="project-tech">
           <span>C#</span>
-          <span>Level Design</span>
-          <span>Character Controller</span>
+          <span>Rigidbody2D Controller</span>
+          <span>Pogo Attack</span>
+          <span>Checkpoint Respawn</span>
+          <span>Boss Encounters</span>
         </div>
         <div class="project-actions">
           <a href="https://github.com/mAntonioCamacho/Samurai-Cat">Source Code &#8594;</a>
@@ -465,43 +559,14 @@
       </div>
     </div>
 
-    <div class="project">
-      <div class="project-image">
-        <img src="A_Little_Adventurer.png" alt="Project screenshot">
-        <!-- <span class="project-image-placeholder">screenshot</span> -->
-      </div>
-      <div class="project-info">
-        <h3>A Little Adventurer</h3>
-        <div class="project-meta">
-          <span>Unity</span>
-          <span>&#183;</span>
-          <span>School project</span>
-        </div>
-        <p class="project-desc">A 3D RPG game following a little adventurer taking quests from villagers and completing them for reward. I implemented an
-            inventory system for the player to hold items, a quest system to keep track of accepted & completed quests, and a dialogue system to interact with NPCs.
-        </p>
-        <div class="project-tech">
-          <span>C#</span>
-          <span>Combat System</span>
-          <span>Physics</span>
-          <span>State Machines</span>
-          <span>Animation</span>
-        </div>
-        <div class="project-actions">
-          <a href="https://github.com/Weida758/GDIM32-Final">Source Code &#8594;</a>
-          <a href="https://weida-chen.itch.io/gdim32final">Play on Itch&#8594;</a>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <div class="divider"><hr></div>
 
-<!-- OTHER -->
+<!-- UNFINISHED -->
 <section id="other">
-  <div class="section-title">Other</div>
+  <div class="section-title">Unfinished Projects</div>
 
   <div class="projects-grid">
 
@@ -526,6 +591,33 @@
       </div>
     </div>
 
+    <div class="project">
+      <div class="project-image">
+        <span class="project-image-placeholder">renderer</span>
+      </div>
+      <div class="project-info">
+        <h3>3D Renderer</h3>
+        <div class="project-meta">
+          <span>Graphics Programming</span>
+          <span>&#183;</span>
+          <span>In Progress</span>
+        </div>
+        <div class="project-tech">
+          <span>3D Renderer</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- CURRENTLY STUDYING -->
+<section id="studying">
+  <div class="section-title">Currently Studying</div>
+  <div class="study-panel">
+    <h3>3D Rendering and Graphics Programming</h3>
   </div>
 </section>
 

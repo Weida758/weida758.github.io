@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weida Chen Resume</title>
+<style>
+  @page {
+    size: letter;
+    margin: 0.42in 0.5in;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    color: #55575c;
+    background: #ffffff;
+    font-family: Calibri, Aptos, Arial, Helvetica, sans-serif;
+    font-size: 10.8pt;
+    line-height: 1.16;
+  }
+
+  .resume {
+    max-width: 8.5in;
+    margin: 0 auto;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 0.12in;
+  }
+
+  h1 {
+    margin: 0;
+    color: #2e374d;
+    font-size: 22pt;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    margin-top: 4px;
+    color: #55575c;
+    font-size: 10.5pt;
+  }
+
+  .contact {
+    margin-top: 3px;
+    color: #55575c;
+    font-size: 9.5pt;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  section {
+    margin-top: 0.14in;
+  }
+
+  .section-title {
+    color: #2e374d;
+    border-bottom: 1.5px solid #4b556d;
+    font-size: 13.5pt;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+    margin-bottom: 0.07in;
+    text-transform: uppercase;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1.08in 1fr;
+    row-gap: 4px;
+    column-gap: 0.08in;
+  }
+
+  .skill-label {
+    font-weight: 800;
+  }
+
+  .skill-line {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.36in;
+    row-gap: 2px;
+  }
+
+  .school-row,
+  .project-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2in;
+  }
+
+  .date {
+    color: #666970;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  .item-title {
+    color: #55575c;
+    font-weight: 800;
+  }
+
+  .project {
+    margin-top: 0.1in;
+    break-inside: avoid;
+  }
+
+  .project:first-of-type {
+    margin-top: 0;
+  }
+
+  .role-line {
+    margin-top: 2px;
+  }
+
+  ul {
+    margin: 2px 0 0 0.18in;
+    padding-left: 0.08in;
+  }
+
+  li {
+    margin: 1px 0;
+  }
+
+  .compact-list li {
+    margin: 0;
+  }
+
+  .emphasis {
+    font-weight: 800;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .footer-note {
+    margin-top: 0.12in;
+    border-top: 1px solid #4b556d;
+    padding-top: 0.05in;
+  }
+</style>
+</head>
+<body>
+<main class="resume">
+  <header>
+    <h1>Weida Chen</h1>
+    <div class="subtitle">Game Engineer</div>
+    <div class="contact">
+      <span class="email-piece">weidac490</span><span class="email-piece">@</span><span class="email-piece">gmail.com</span> &bull;
+      <a href="https://github.com/Weida758">github.com/Weida758</a> &bull;
+      <a href="https://www.linkedin.com/in/weida-chen-800457347/">linkedin.com/in/weida-chen-800457347</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-title">Industry Skills</div>
+    <div class="skills-grid">
+      <div class="skill-label">Languages:</div>
+      <div class="skill-line">
+        <span>C++</span><span>C#</span><span>Python</span>
+      </div>
+
+      <div class="skill-label">Engines & VC:</div>
+      <div class="skill-line">
+        <span>Unity</span><span>Git & Github</span><span>Visual Studio / Rider</span>
+      </div>
+
+      <div class="skill-label">Concepts:</div>
+      <div class="skill-line">
+        <span>Gameplay Systems</span><span>OOP/OOD</span><span>State Machines</span>
+        <span>Object Pooling</span><span>ScriptableObjects</span>
+        <span>Data Structures & Algorithms</span><span>Linear Algebra</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Education</div>
+    <div class="school-row">
+      <div><span class="item-title">University of California, Irvine</span></div>
+      <div class="date">2024 - Present</div>
+    </div>
+    <ul class="compact-list">
+      <li><span class="emphasis">Double Major:</span> Computer Science; Game Design and Interactive Media</li>
+      <li><span class="emphasis">Relevant Coursework:</span> Game Programming Series, Game Design, Linear Algebra, Boolean Algebra & Discrete Mathematics, Programming in C/C++</li>
+      <li><span class="emphasis">Currently Taking:</span> Computer Networks, Game Engineering, Data Structures & Algorithms</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-title">Game Project Highlights</div>
+
+    <div class="project">
+      <div class="project-row">
+        <div>
+          <span class="item-title">Unity, C# | <span class="italic">Get Me Out</span>: 2D Jam Game | UCI 2026 Zotjam</span>
+        </div>
+        <div class="date">2026</div>
+      </div>
+      <div class="role-line">Game Programmer &bull; 4th Audience Choice, 2nd Judge Choice</div>
+      <ul>
+        <li>Built card-driven movement architecture that connects deck selection, player state logic, input actions, and ability execution.</li>
+        <li>Implemented reusable movement abilities including turn, jump, dash, and gravity inversion through Rigidbody2D gameplay actions.</li>
+        <li>Programmed card/deck interaction flow for selecting, retrieving, displaying, and consuming abilities during play.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-row">
+        <div>
+          <span class="item-title">Unity, C# | <span class="italic">Knight-mare Survival</span>: Vampire Survivors-like School Project</span>
+        </div>
+        <div class="date">2026</div>
+      </div>
+      <div class="role-line">Game Programmer &bull; School Project</div>
+      <ul>
+        <li>Engineered weighted enemy wave spawning with unlock timing, active-enemy caps, and time-based difficulty scaling.</li>
+        <li>Implemented object pools for enemies, XP gems, and VFX to reduce runtime allocation pressure in a high-spawn survival game.</li>
+        <li>Built a modular weapon and upgrade pipeline using ScriptableObject data, weapon levels, global damage bonuses, and upgrade options.</li>
+        <li>Connected player health, XP, level-up, pause, death, and upgrade UI through event-driven gameplay state changes.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-row">
+        <div>
+          <span class="item-title">Unity, C# | <span class="italic">Samurai Cat</span>: First Unity 2D Platformer</span>
+        </div>
+        <div class="date">School Project</div>
+      </div>
+      <ul>
+        <li>Worked on a Rigidbody2D player controller with sprinting, jumping, double-jump and dash unlocks, one-way platform drop-through, and facing logic.</li>
+        <li>Worked on pogo-style downward attacks that bounce off attackable objects, reset double jumps, damage enemies, and trigger hit VFX/SFX.</li>
+        <li>Worked on checkpoint respawning, scene-to-scene spawn persistence, and projectile hazards.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Unfinished Projects & Study</div>
+    <div class="project-row">
+      <div><span class="item-title">3D Renderer</span> &bull; Graphics Programming</div>
+      <div class="date">In Progress</div>
+    </div>
+    <div class="footer-note"><span class="emphasis">Currently Studying:</span> 3D Rendering and Graphics Programming</div>
+  </section>
+</main>
+</body>
+</html>

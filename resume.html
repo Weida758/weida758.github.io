@@ -164,16 +164,16 @@
   </header>
 
   <section>
-    <div class="section-title">Industry Skills</div>
+    <div class="section-title">Technical Skills</div>
     <div class="skills-grid">
       <div class="skill-label">Languages:</div>
       <div class="skill-line">
         <span>C++</span><span>C#</span><span>Python</span>
       </div>
 
-      <div class="skill-label">Engines & VC:</div>
+      <div class="skill-label">Engine &amp; Tools:</div>
       <div class="skill-line">
-        <span>Unity</span><span>Git & Github</span><span>Visual Studio / Rider</span>
+        <span>Unity</span><span>Git &amp; GitHub</span><span>Visual Studio / Rider</span>
       </div>
 
       <div class="skill-label">Concepts:</div>
@@ -189,72 +189,63 @@
     <div class="section-title">Education</div>
     <div class="school-row">
       <div><span class="item-title">University of California, Irvine</span></div>
-      <div class="date">2024 - Present</div>
+      <div class="date">Expected June 2028</div>
     </div>
     <ul class="compact-list">
       <li><span class="emphasis">Double Major:</span> Computer Science; Game Design and Interactive Media</li>
-      <li><span class="emphasis">Relevant Coursework:</span> Game Programming Series, Game Design, Linear Algebra, Boolean Algebra & Discrete Mathematics, Programming in C/C++</li>
-      <li><span class="emphasis">Currently Taking:</span> Computer Networks, Game Engineering, Data Structures & Algorithms</li>
+      <li><span class="emphasis">GPA:</span> 3.85</li>
+      <li><span class="emphasis">Relevant Coursework:</span> Game Programming Series, Game Design, Linear Algebra, Programming in C/C++; Computer Networks, Game Engineering, Data Structures &amp; Algorithms</li>
     </ul>
   </section>
 
   <section>
-    <div class="section-title">Game Project Highlights</div>
+    <div class="section-title">Projects</div>
 
     <div class="project">
       <div class="project-row">
         <div>
-          <span class="item-title">Unity, C# | <span class="italic">Get Me Out</span>: 2D Jam Game | UCI 2026 Zotjam</span>
+          <span class="item-title">Get Me Out | Unity, C#</span>
         </div>
         <div class="date">2026</div>
       </div>
-      <div class="role-line">Game Programmer &bull; 4th Audience Choice, 2nd Judge Choice</div>
+      <div class="role-line">Game Programmer | UCI Zotjam | 2nd Judge Choice, 4th Audience Choice</div>
       <ul>
-        <li>Built card-driven movement architecture that connects deck selection, player state logic, input actions, and ability execution.</li>
-        <li>Implemented reusable movement abilities including turn, jump, dash, and gravity inversion through Rigidbody2D gameplay actions.</li>
-        <li>Programmed card/deck interaction flow for selecting, retrieving, displaying, and consuming abilities during play.</li>
+        <li>Implemented an idle/movement finite state machine integrating Unity Input System actions with card-triggered player abilities.</li>
+        <li>Implemented turn, jump, dash, and gravity inversion using Rigidbody2D velocity, forces, and gravity control.</li>
+        <li>Built a LinkedList-based deck with pre-game card selection/retrieval, last-in-first-out ability execution, and event-driven UI updates.</li>
       </ul>
     </div>
 
     <div class="project">
       <div class="project-row">
         <div>
-          <span class="item-title">Unity, C# | <span class="italic">Knight-mare Survival</span>: Vampire Survivors-like School Project</span>
+          <span class="item-title">Knight-mare Survival | Unity, C#</span>
         </div>
         <div class="date">2026</div>
       </div>
-      <div class="role-line">Game Programmer &bull; School Project</div>
+      <div class="role-line">Game Programmer | School Project | Survival Game</div>
       <ul>
-        <li>Engineered weighted enemy wave spawning with unlock timing, active-enemy caps, and time-based difficulty scaling.</li>
-        <li>Implemented object pools for enemies, XP gems, and VFX to reduce runtime allocation pressure in a high-spawn survival game.</li>
+        <li>Engineered weighted enemy spawning with timed unlocks, active-enemy caps, and time-based scaling of wave size and enemy stats.</li>
+        <li>Built prefab-keyed object pools for enemies, XP gems, and VFX, prewarming and reusing instances to reduce repeated instantiation and destruction.</li>
         <li>Built a modular weapon and upgrade pipeline using ScriptableObject data, weapon levels, global damage bonuses, and upgrade options.</li>
-        <li>Connected player health, XP, level-up, pause, death, and upgrade UI through event-driven gameplay state changes.</li>
+        <li>Connected XP, level-up, and death events to UI, queueing pending level-ups and pausing gameplay during upgrade selection.</li>
       </ul>
     </div>
 
     <div class="project">
       <div class="project-row">
         <div>
-          <span class="item-title">Unity, C# | <span class="italic">Samurai Cat</span>: First Unity 2D Platformer</span>
+          <span class="item-title">CPU Path Tracer | C++</span>
         </div>
-        <div class="date">School Project</div>
       </div>
+      <div class="role-line">Tutorial Project | Based on Ray Tracing in One Weekend</div>
       <ul>
-        <li>Worked on a Rigidbody2D player controller with sprinting, jumping, double-jump and dash unlocks, one-way platform drop-through, and facing logic.</li>
-        <li>Worked on pogo-style downward attacks that bounce off attackable objects, reset double jumps, damage enemies, and trigger hit VFX/SFX.</li>
-        <li>Worked on checkpoint respawning, scene-to-scene spawn persistence, and projectile hazards.</li>
+        <li>Implemented a CPU path tracer with ray-sphere intersections, recursive ray scattering, and diffuse, metallic, and dielectric materials.</li>
+        <li>Implemented multisample antialiasing, gamma correction, and a configurable perspective camera with depth of field.</li>
       </ul>
     </div>
   </section>
 
-  <section>
-    <div class="section-title">Unfinished Projects & Study</div>
-    <div class="project-row">
-      <div><span class="item-title">3D Renderer</span> &bull; Graphics Programming</div>
-      <div class="date">In Progress</div>
-    </div>
-    <div class="footer-note"><span class="emphasis">Currently Studying:</span> 3D Rendering and Graphics Programming</div>
-  </section>
 </main>
 </body>
 </html>

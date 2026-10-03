@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Weida Chen - Game Engineer</title>
+<meta name="description" content="Weida Chen, Game Engineer. Unity gameplay systems, C# combat and progression systems, and C++ graphics programming.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -94,7 +95,7 @@
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
 
   .hero-subtitle {
@@ -212,6 +213,7 @@
     color: var(--text-tertiary);
     margin-bottom: 0.75rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 0.75rem;
   }
 
@@ -241,6 +243,7 @@
 
   .project-actions {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.25rem;
     font-size: 0.82rem;
   }
@@ -426,11 +429,9 @@
     </button>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#other">Unfinished</a></li>
-      <li><a href="#studying">Studying</a></li>
+      <li><a href="#rendering">Rendering</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
-      <!-- <li><a href="#about">About</a></li> -->
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -441,7 +442,7 @@
   <h1>Weida Chen</h1>
   <p class="hero-subtitle">Game Engineer</p>
   <div class="hero-links">
-    <span>weidac490@email.com</span>
+    <span>weidac490@gmail.com</span>
     <a href="Weida_Chen_Resume.pdf">Resume</a>
     <a href="https://github.com/Weida758">GitHub</a>
     <a href="https://www.linkedin.com/in/weida-chen-800457347/">LinkedIn</a>
@@ -467,7 +468,7 @@
           <span>&#183;</span>
           <span>UCI 2026 Zotjam</span>
         </div>
-        <p class="project-desc">2026 Spring Zotjam submission that won 4th in Audience Choice and 2nd in Judge Choice at UCI 2026 Zotjam. I built the core card-driven movement architecture, connecting a player state machine, input actions, and ability execution so each card changes the character's behavior through reusable systems instead of one-off level scripting.</p>
+        <p class="project-desc">2D instruction-card game awarded 2nd Judge Choice and 4th Audience Choice at UCI 2026 Zotjam. I implemented an idle/movement finite state machine integrating Unity Input System actions with card-triggered abilities, and a LinkedList-based deck with pre-game selection, last-in-first-out execution, and event-driven UI updates.</p>
         <div class="project-tech">
           <span>C#</span>
           <span>Card & Deck System</span>
@@ -493,7 +494,7 @@
           <span>&#183;</span>
           <span>School Project - Vertical Slice</span>
         </div>
-        <p class="project-desc">Vampire Survivors-like 2D school project built around scalable combat systems. I engineered weighted enemy wave spawning with time-based difficulty curves, pooled runtime objects for enemies, XP pickups, and a modular weapon/upgrade pipeline driven by ScriptableObject data so new weapons, enemy types, and progression options can be added without rewriting core logic.</p>
+        <p class="project-desc">Vampire Survivors-like 2D school project. I engineered weighted enemy spawning with timed unlocks, active-enemy caps, and scaling wave sizes and enemy stats. I built prefab-keyed object pools and a ScriptableObject-driven weapon and upgrade pipeline, with queued level-up events and paused gameplay during upgrade selection.</p>
         <div class="project-tech">
           <span>C#</span>
           <span>Enemy Spawning</span>
@@ -510,7 +511,7 @@
 
     <div class="project">
       <div class="project-image">
-        <img src="samurai_cat.png" alt="Project screenshot">
+        <img src="samurai_cat.png" alt="Samurai Cat gameplay screenshot">
       </div>
       <div class="project-info">
         <h3>Samurai Cat</h3>
@@ -519,13 +520,12 @@
           <span>&#183;</span>
           <span>School Project - 2 months</span>
         </div>
-        <p class="project-desc">My first Unity project: a 2D platformer built around pogo-style downward attacks. I worked on Rigidbody2D movement, sprinting, jumping, double-jump and dash unlocks, one-way platform drop-through, checkpoint respawning, projectile hazards, and scene-to-scene spawn persistence.</p>
+        <p class="project-desc">Collaborative 2D platformer centered on pogo-style downward attacks. I worked on Rigidbody2D movement, double-jump and dash unlocks, one-way platform drop-through, checkpoint respawning, projectile hazards, and scene-to-scene spawn persistence.</p>
         <div class="project-tech">
           <span>C#</span>
           <span>Rigidbody2D Controller</span>
           <span>Pogo Attack</span>
           <span>Checkpoint Respawn</span>
-          <span>Boss Encounters</span>
         </div>
         <div class="project-actions">
           <a href="https://github.com/mAntonioCamacho/Samurai-Cat">Source Code &#8594;</a>
@@ -534,90 +534,21 @@
       </div>
     </div>
 
-    <div class="project">
-      <div class="project-image">
-        <img src="question_of_the_day.png" alt="Project screenshot">
-      </div>
-      <div class="project-info">
-        <h3>Question of the Day</h3>
-        <div class="project-meta">
-          <span>Unity</span>
-          <span>&#183;</span>
-          <span>Group Project - 2 month</span>
-        </div>
-        <p class="project-desc">A 3D puzzle horror game set in a university classroom where the student has to correctly solve multiple problems to escape.</p>
-        <div class="project-tech">
-          <span>C#</span>
-          <span>First Person Interaction System</span>
-          <span>Programming Puzzles</span>
-          <span>Level Design</span>
-        </div>
-        <div class="project-actions">
-          <a href="https://github.com/TeahBrumbaugh/Horror-Game-Project">Source Code &#8594;</a>
-          <a href="https://teahb.itch.io/question-of-the-day">Play on Itch &#8594;</a>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <div class="divider"><hr></div>
 
-<!-- UNFINISHED -->
-<section id="other">
-  <div class="section-title">Unfinished Projects</div>
-
-  <div class="projects-grid">
-
-    <div class="project">
-      <div class="project-image">
-        <span class="project-image-placeholder">screenshot</span>
-      </div>
-      <div class="project-info">
-        <h3>Unreleased Project</h3>
-        <div class="project-meta">
-          <span>Unity</span>
-          <span>&#183;</span>
-          <span>In Development</span>
-        </div>
-        <p class="project-desc">A 2D metroidvania game project</p>
-        <div class="project-tech">
-          <span>C#</span>
-        </div>
-        <div class="project-actions">
-          <a href="https://github.com/Weida758/MetroidvaniaCode">Source Code &#8594;</a>
-        </div>
-      </div>
+<!-- RENDERING -->
+<section id="rendering">
+  <div class="section-title">Graphics Programming</div>
+  <div class="exp-content">
+    <h3>CPU Path Tracer</h3>
+    <div class="project-meta"><span>C++</span><span>&#183;</span><span>Tutorial Project - Ray Tracing in One Weekend</span></div>
+    <p class="project-desc">Implemented a CPU path tracer with ray-sphere intersections, recursive ray scattering, and diffuse, metallic, and dielectric materials. Added multisample antialiasing, gamma correction, and a configurable perspective camera with depth of field.</p>
+    <div class="project-tech">
+      <span>C++</span><span>Ray Tracing</span><span>Material Scattering</span><span>Camera Projection</span>
     </div>
-
-    <div class="project">
-      <div class="project-image">
-        <span class="project-image-placeholder">renderer</span>
-      </div>
-      <div class="project-info">
-        <h3>3D Renderer</h3>
-        <div class="project-meta">
-          <span>Graphics Programming</span>
-          <span>&#183;</span>
-          <span>In Progress</span>
-        </div>
-        <div class="project-tech">
-          <span>3D Renderer</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"><hr></div>
-
-<!-- CURRENTLY STUDYING -->
-<section id="studying">
-  <div class="section-title">Currently Studying</div>
-  <div class="study-panel">
-    <h3>3D Rendering and Graphics Programming</h3>
   </div>
 </section>
 
@@ -639,17 +570,18 @@
       <h3>Engines & Tools</h3>
       <ul>
         <li>Unity</li>
-        <li>Git & Github</li>
+        <li>Git &amp; GitHub</li>
         <li>Visual Studio / Rider</li>
       </ul>
     </div>
     <div class="skill-category">
-      <h3>Systems</h3>
+      <h3>Gameplay Engineering</h3>
       <ul>
-        <li>Quest System</li>
-        <li>Combat & Ability Systems</li>
-        <li>Inventory System</li>
-        <li>Save System</li>
+        <li>Finite State Machines</li>
+        <li>Weapon &amp; Upgrade Systems</li>
+        <li>Object Pooling</li>
+        <li>ScriptableObject Data</li>
+        <li>Event-Driven Gameplay</li>
       </ul>
     </div>
   </div>
@@ -661,29 +593,27 @@
   <div class="section-title">Education</div>
 
   <div class="exp-item">
-    <div class="exp-date">2024 — Present</div>
+    <div class="exp-date">Expected June 2028</div>
     <div class="exp-content">
       <h3>University of California, Irvine</h3>
-      <p class="exp-desc">Majoring in Computer Science</p>
-      <p class="exp-desc">Majoring in Game Design and Interactive Media</p>
+      <p class="exp-desc">Double Major: Computer Science; Game Design and Interactive Media</p>
+      <p class="exp-desc"><strong>GPA: 3.85</strong></p>
     </div>
   </div>
 
   <div style="margin-top: 1rem;">
     <div class="skills-grid">
       <div class="skill-category">
-        <h3>Relevant Completed Courses</h3>
+        <h3>Relevant Coursework</h3>
         <ul>
-          <li></li>
           <li>GDIM 31-32: Game Programming Series</li>
           <li>GDIM 25 & GDIM 27: Game Design</li>
           <li>Math 3A: Linear Algebra</li>
-          <li>ICS 6B and ICS 6D: Boolean Algebra & Discrete Mathematics</li>
           <li>ICS 45C: Programming in C/C++</li>
         </ul>
       </div>
       <div class="skill-category">
-        <h3>Currently Taking</h3>
+        <h3>Engineering Coursework</h3>
         <ul>
           <li>CS 132 Computer Networks</li>
           <li>GDIM 139 Game Engineering</li>
@@ -696,43 +626,13 @@
 
 <div class="divider"><hr></div>
 
-<!-- EXPERIENCE  -->
-<!-- <section id="experience">
-  <div class="section-title">Experience</div>
-
-  <div class="exp-item">
-    <div class="exp-date">2024 — Present</div>
-    <div class="exp-content">
-      <h3>Gameplay Programmer</h3>
-      <div class="exp-company">Place holder company - location</div>
-      <p class="exp-desc">description</p>
-    </div>
-  </div>
-</section> -->
-  
-
-<div class="divider"><hr></div>
-
-<!-- ABOUT -->
-<!--
-<section id="about">
-  <div class="section-title">About</div>
-  <div class="about-content">
-    <p>I'm a game programmer. I got into games because I grew up playing them and always wanted to understand how they worked under the hood. 
-        I like solving problems and designing systems with code such as movement system, combat system, quest system, etc.</p>
-  </div>
-</section>
-
-<div class="divider"><hr></div>
--->
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-title">Contact</div>
   <div class="contact-content">
-    <p></p>
     <ul class="contact-list">
       <li><span class="contact-label">Email</span> weidac490@gmail.com</li>
-      <li><span class="contact-label">GitHub</span> <a href="https://github.com/Weida758">Github</a></li>
+      <li><span class="contact-label">GitHub</span> <a href="https://github.com/Weida758">GitHub</a></li>
       <li><span class="contact-label">LinkedIn</span> <a href="https://www.linkedin.com/in/weida-chen-800457347/">LinkedIn</a></li>
     </ul>
   </div>
